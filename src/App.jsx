@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 // Nepovedlo se uložit API klíč do environment variable
@@ -6,11 +6,13 @@ import './App.css'
 
 function App() {
 
+  const [weather, setWeather] = useState(null)
+
   const fetchWeather = () => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=Praha&appid=f6e5f0e49d538dd24bf7b59890e5efc2`)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      setWeather(data)
     })
   }
 
