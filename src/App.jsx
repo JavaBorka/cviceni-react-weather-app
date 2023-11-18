@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import './App.css'
 
+// Nepovedlo se uložit API klíč do environment variable
+// const myID = process.env.REACT_APP_MY_API_ID
+
 function App() {
 
   const fetchWeather = () => {
