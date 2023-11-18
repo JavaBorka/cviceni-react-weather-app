@@ -1,6 +1,19 @@
+import { useEffect } from 'react'
 import './App.css'
 
 function App() {
+
+  const fetchWeather = () => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=Praha&appid=f6e5f0e49d538dd24bf7b59890e5efc2`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    })
+  }
+
+  useEffect(() => {
+    fetchWeather()
+  }, [])
 
   return (
     <div className="App">
