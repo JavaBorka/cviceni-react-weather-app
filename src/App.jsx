@@ -28,11 +28,14 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>My Weather App</h1>
-        <div className="weather">
-          <CitySelect />
-          <CurrentWeather />
-          <Forecast />
-        </div>
+        
+        {weather !== null &&
+          <div className="weather">
+            <CitySelect />
+            <CurrentWeather />
+            <Forecast />
+          </div>
+        }
       </div>
     </div>
   )
