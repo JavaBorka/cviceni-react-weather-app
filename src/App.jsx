@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react'
+import CurrentWeather from './components/CurrentWeather'
+import Forecast from './components/Forecast'
+import CitySelect from './components/CitySelect'
+
 import './App.css'
 
 // Nepovedlo se uložit API klíč do environment variable
@@ -25,13 +29,9 @@ function App() {
       <div className="container">
         <h1>My Weather App</h1>
         <div className="weather">
-          {/* <div className="button-group">
-            <button className="button">City01</button>
-            <button className="button">City02</button>
-            <button className="button">City03</button>
-          </div> */}
-
-
+          <CitySelect />
+          <CurrentWeather />
+          <Forecast />
         </div>
       </div>
     </div>
