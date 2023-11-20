@@ -16,13 +16,12 @@ function App() {
       <div className="container">
         <h1>My Weather App</h1>
 
-          <div className="weather">
-            <CitySelect />
+        <CitySelect />
 
-            <CurrentWeather city="Prague" />
-
-            <Forecast />
-          </div>
+        <div className="weather">
+          <CurrentWeather city="Prague" />
+          <Forecast />
+        </div>
 
       </div>
     </div>
