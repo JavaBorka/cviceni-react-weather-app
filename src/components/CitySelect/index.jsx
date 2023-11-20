@@ -1,11 +1,19 @@
-function CitySelect() {
+function CitySelect({cities, onChange}) {
 
     return (
         <>
             <div className="button-group">
-                <button className="button">City01</button>
-                <button className="button">City02</button>
-                <button className="button">City03</button>
+                {cities.map(cityName =>
+                <button 
+                    key={cityName}
+                    className="button"
+                    onClick={() => {
+                        onChange(cityName)
+                    }}
+                >
+                    {cityName}
+                </button>
+                )}
             </div>
         </>
     );
