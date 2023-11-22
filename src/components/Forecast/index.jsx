@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 
 import { getDateFromUnix, getDayFromUnix } from "../helpers";
 
+const myID = import.meta.env.VITE_MY_API_ID
 
 function Forecast({city}) {
 
     const [weather, setWeather] = useState(null)
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=f6e5f0e49d538dd24bf7b59890e5efc2`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=${myID}`)
         .then(response => response.json())
         .then(data => {
             setWeather([
