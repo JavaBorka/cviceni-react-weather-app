@@ -35,7 +35,7 @@ function Forecast({city}) {
                                     style={{ height: "100%" }}
                                 />
                             </div>
-                            <div className="forecast__temp">{day.main.temp.toFixed(1)}</div>
+                            <div className="forecast__temp">{day.main.temp.toFixed(1)} °C</div>
                         </div>
                     )}
                 </div>
