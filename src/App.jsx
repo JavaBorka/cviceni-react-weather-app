@@ -33,7 +33,7 @@ function App() {
 
         <div className="weather">
           <CurrentWeather city={city} />
-          <Forecast />
+          <Forecast city={city} />
         </div>
 
       </div>
