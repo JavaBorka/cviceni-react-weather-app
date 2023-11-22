@@ -1,21 +1,26 @@
-function CitySelect({cities, onChange}) {
+import { useState } from "react";
+
+function CitySelect({city, cities, onSelect}) {
+
+    const [citySelect, setCitySelect] = useState(city)
 
     return (
-        <>
-            <div className="button-group">
-                {cities.map(cityName =>
-                <button 
-                    key={cityName}
-                    className="button"
-                    onClick={() => {
-                        onChange(cityName)
-                    }}
-                >
-                    {cityName}
-                </button>
+        <div className="select-wrapper">
+            <select
+                className="select"
+                name="cityselect"
+                id="cityselect"
+                value={citySelect}
+                onChange={(event) => {
+                    setCitySelect(event.target.value)
+                    onSelect(event.target.value)
+                }}
+            >
+                {cities.map(city =>
+                    <option key={city} value={city}>{city}</option>
                 )}
-            </div>
-        </>
+            </select>
+        </div>
     );
 }
 

@@ -11,17 +11,64 @@ import { useState } from 'react'
 // const myID = process.env.REACT_APP_MY_API_ID
 
 const cities = [
+  "Abuja",
+  "Amsterdam",
+  "Aswān",
+  "Athens",
+  "Bangkok",
+  "Barcelona",
+  "Belgrade",
+  "Brno",
+  "Budapest",
+  "Buenos Aires",
+  "Cape Town",
+  "Dakar",
+  "El Alto",
+  "Hanoi",
+  "Harbin",
+  "Kingston",
+  "Kuala Lumpur",
+  "Kuwait",
+  "Kyiv",
+  "Lagos",
+  "Ljubljana",
+  "London",
+  "Madrid",
+  "Melbourne",
+  "Miami",
+  "Minsk",
+  "Moscow",
+  "New Delhi",
+  "New York",
+  "Norilsk",
+  "Paris",
+  "Porto",
   "Prague",
   "Reykjavik",
-  "Tenerife"
-]
+  "Seoul",
+  "Skopje",
+  "Sofia",
+  "Split",
+  "Sydney",
+  "São Paulo",
+  "Tallinn",
+  "Tenerife",
+  "Tirana",
+  "Toronto",
+  "Vancouver",
+  "Vienna",
+  "Vilnius",
+  "Warsaw",
+  "Winnipeg",
+  "Yakutsk",
+];
 
 function App() {
 
   const [ city, setCity] = useState('Prague')
 
-  const handleButtonClick = (cityName) => {
-    setCity(cityName)
+  const handleSelect = (citySelect) => {
+    setCity(citySelect)
   }
 
   return (
@@ -29,7 +76,7 @@ function App() {
       <div className="container">
         <h1>My Weather App</h1>
 
-        <CitySelect cities={cities} onChange={handleButtonClick} />
+        <CitySelect city={city} cities={cities} onSelect={handleSelect} />
 
         <div className="weather">
           <CurrentWeather city={city} />
